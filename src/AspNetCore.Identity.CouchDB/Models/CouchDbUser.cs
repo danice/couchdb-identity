@@ -152,6 +152,15 @@ namespace AspNetCore.Identity.CouchDB.Models
         public virtual HashSet<LoginInfo> Logins { get; private set; } = new();
 
         /// <summary>
+        /// A users full phone info.
+        /// </summary>
+        [JsonProperty("avatar", NullValueHandling = NullValueHandling.Ignore)]
+        public virtual string Avatar { get; set; } = new("");
+
+        public virtual DateTime? AvatarLastCheck { get; set; }
+
+
+        /// <summary>
         /// Returns the username for this user.
         /// </summary>
         /// <returns>The username of the user.</returns>
